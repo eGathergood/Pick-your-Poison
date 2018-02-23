@@ -17,6 +17,8 @@
 </head>
 
 <body>
+  <header id="MainHeader">
+    <h1 id="Title">Pick Your Poison</h1>
 
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 
@@ -30,13 +32,50 @@
   </li>
 
   <li class="nav-item">
-      <a class="nav-link" href="#">Placeholder</a>
+      <a class="nav-link" href="#">About Us</a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">Placeholder</a>
+        <a class="nav-link" href="#">Review</a>
       </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
 
   <li class="nav-item">
-    <a
+    <a class="nav-link " href="#">Login</a>
+  </li>
+</ul>
+</div>
+</nav>
+</header>
+  <section class="firstRow">
+  <!---left section-->
+  <nav id="left section">
+    <section id="Addings">
+      <p class="search"id=" Whatingredientshaveyougot?">What ingredients have you got?</p>
+      <section id="wrapper"></section>
+      <section class="add-button">
+        <button class="button searchbutton" id="schbutton" type="button">SEARCH</button>
+      </section>
+      <script>
+      //Add ingredient box on page load
+      addIngredientBox();
+      //Add additional ingredient box on click
+      $('#Addings').on('click','.add-box',function(){
+        $('.form-wrapper').removeClass("add").addClass("remove");
+        $('.add-box').removeClass("add-box").addClass("remove-box").text("-");
+        addIngredientBox();
+
+      });
+      //To add ingredient boxes
+      function addIngredientBox(){
+        var formWrapper= $('<form class="form-wrapper cf add" onsubmit="return false"></form>');
+        var textBox=$('<input class="text-box" type="text"placeholder="List ingredients here..">');
+        var button=$('<button class="add-box">+</button>');
+        $(formWrapper).append(textBox);
+        $(formWrapper).append(button);
+        $(formWrapper).appendTo($('#wrapper'));
+      }
+      </script>
+    </section>
   </body>

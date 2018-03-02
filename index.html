@@ -54,7 +54,7 @@
     <section id="Addings">
       <p class="search"id=" Whatingredientshaveyougot?">What ingredients have you got?</p>
       <section id="wrapper"></section>
-      <section class="add-button">
+      <section class="add-clrButton">
         <button class="button searchbutton" id="schbutton" type="button">SEARCH</button>
         <button class="button clearbutton" id="clrbutton"type="button">CLEAR</button>
       </section>
@@ -68,6 +68,12 @@
         addIngredientBox();
 
       });
+
+      //Remove selected ingredient boxes on click
+      $('#Addings').on('click','.remove-box',function(){
+        $(this).parents('form').remove();
+      });
+
       //To add ingredient boxes
       function addIngredientBox(){
         var formWrapper= $('<form class="form-wrapper cf add" onsubmit="return false"></form>');

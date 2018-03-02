@@ -56,6 +56,7 @@
       <section id="wrapper"></section>
       <section class="add-button">
         <button class="button searchbutton" id="schbutton" type="button">SEARCH</button>
+        <button class="button clearbutton" id="clrbutton"type="button">CLEAR</button>
       </section>
       <script>
       //Add ingredient box on page load
@@ -77,5 +78,32 @@
         $(formWrapper).appendTo($('#wrapper'));
       }
       </script>
+      <!---for the search button--->
+      <script type="text/javascript">
+      jQuery(document).ready(function($)){
+        //to return box contents
+        function getSearchBox(){
+          var userInput="";
+          $(".form-wrapper input").each(function(){
+            userInput+=$(this).val()+',';
+          });
+          return userInput;
+        }
+        function getOtherSearchBox(){
+          return $('#recipeSearch').val()+',';
+        }
+        //run the ingredient search
+        $("#schbutton").click(function(){
+          console.log("clicked");
+          $('.results').remove();
+          searchApi(getSearchBox());
+        });
+        // clear all additional ingredient boxes available
+        $("#clrbutton").click(function(){
+          $('#wrapper').empty();
+          addIngredientBox();
+        });
+
+      }
     </section>
   </body>

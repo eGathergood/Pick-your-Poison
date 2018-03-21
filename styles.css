@@ -9,3 +9,16 @@
   color:white;
   text-align: center;
 }
+/*#leftBar{
+  width:92%;
+  margin-bottom:10%;
+  margin-top:+15%;
+}*/
+#left section{
+  border-radius: 8px;
+  line-height: 35px;
+  float:left;
+  padding: 15px;
+  margin-left: 5%;
+  background-color: white;
+}

@@ -9,30 +9,19 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-<<<<<<< HEAD
 
-#socialMediaButtons{
-  icon-image:url("FB_ICON-02.png");
-  
-}
-
-
-=======
->>>>>>> 5a265404c32ef704ff9cdf076e81aeba25654e19
 #MainHeader{
   color:white;
   text-align: center;
 }
-<<<<<<< HEAD
 
-=======
+
 @media screen and (min-width: 700px)
 #leftsection{
   width:92%;
   margin-bottom:10%;
   margin-top:+15%;
 }
->>>>>>> 5a265404c32ef704ff9cdf076e81aeba25654e19
 .form-wrapper{
   width: 100%;
   margin: auto;
@@ -41,45 +30,59 @@ body, html {
 
 #leftsection{
   position: fixed;
-<<<<<<< HEAD
-  top:150px;
+  top: 100px;
   margin-top: 2%;
-  margin-bottom: 80%;
-  border-radius: 8px;
-  line-height: 25px;
-  width:25%;
-=======
-  top: 150px;
-  margin-top: 2%;
-  margin-bottom: 80%;
   width: 25%;
   border-radius: 8px;
   line-height: 25px;
->>>>>>> 5a265404c32ef704ff9cdf076e81aeba25654e19
   float:left;
   padding: 15px;
   margin-left: 5%;
   background-color: white;
+  overflow:auto;
+  max-height: 400px;
+}
+body{
+  margin-bottom: 90px;
+}
+.firstRow{
+  margin-bottom: 90px;
 }
 
 /*footer*/
 
-footer{
+/*footer{
   width: 100%;
   background-color: #343a40;
   padding: 60px 0px;
-    bottom:10px;
+}*/
 
-
-}
 #footer-info{
-
+ position: fixed;
+ height: 80px;
+ bottom: 0px;
+ left:0px;
+ right:0px;
+ margin-bottom: 30px;
   text-align: center;
   color: #ffffff;
-
+  width: 100%;
+  background-color: #343a40;
+//  padding: 60px 0px;
 }
 .socials{
-  text-align: center;
+
+  position: fixed;
+  height: 30px;
+  bottom: 0px;
+  left:0px;
+  right:0px;
+  margin-bottom: 0px;
+   text-align: center;
+   color: #ffffff;
+   width: 100%;
+   background-color: #343a40;
+   //padding: 60px 0px;
 }
 .btn-facebook{
   background-color: #217f56;

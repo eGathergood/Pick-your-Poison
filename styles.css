@@ -3,32 +3,38 @@ body, html {
 }
 
 .bg {
-  background-image: url("Pick-your-Poison\IMAGES\ABOUT\HOME_IMAGE_2.jpg");
+  background-image: url("HOME_IMAGE_2.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#title{
-  padding-top:45px;
-  padding-bootom: 20px;
-  font-size:90px;
-  text-shadow:4px 4px 6px #000000;
-  font-family: Verdana,sans-serif;
+#socialMediaButtons{
+  icon-image:url("FB_ICON-02.png");
+  
 }
-#header{
+
+
+#MainHeader{
   color:white;
   text-align: center;
 }
-/*#leftBar{
-  width:92%;
-  margin-bottom:10%;
-  margin-top:+15%;
-}*/
-#left section{
+
+.form-wrapper{
+  width: 100%;
+  margin: auto;
+  margin-bottom:7%;
+}
+
+#leftsection{
+  position: fixed;
+  top:150px;
+  margin-top: 2%;
+  margin-bottom: 80%;
   border-radius: 8px;
-  line-height: 35px;
+  line-height: 25px;
+  width:25%;
   float:left;
   padding: 15px;
   margin-left: 5%;

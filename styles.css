@@ -45,10 +45,15 @@ footer{
   width: 100%;
   background-color: #343a40;
   padding: 60px 0px;
+    bottom:10px;
+
+
 }
 #footer-info{
+
   text-align: center;
   color: #ffffff;
+
 }
 .socials{
   text-align: center;

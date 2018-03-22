@@ -1,4 +1,26 @@
+<<<<<<< HEAD
 
+=======
+body, html {
+  height: 100%;
+}
+
+.bg {
+  background-image: url("Pick-your-Poison\IMAGES\ABOUT\HOME_IMAGE_2.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#title{
+  padding-top:45px;
+  padding-bootom: 20px;
+  font-size:90px;
+  text-shadow:4px 4px 6px #000000;
+  font-family: Verdana,sans-serif;
+}
+>>>>>>> 60d9d15021f5d42f1f37957919794bd6dc7971d2
 #header{
   color:white;
   text-align: center;

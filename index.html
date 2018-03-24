@@ -40,7 +40,7 @@
             <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="login.html">Login</a>
           </li>
         <li>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -173,7 +173,7 @@
                                 success: function (response) {
                                     console.log(response);
                                     var res = JSON.parse(JSON.stringify(response));
-                                    //If results are found create and populate card for each recipe
+                                    //If results are found create and populate card for each drink
                                     if (res.drinks.length > 0) {
                                         for (var i = 0; i < res.drinks.length; i++) {
                                             var strDrink = res.drinks[i].strDrink;
@@ -182,7 +182,7 @@
                                             console.log(strDrink);
                                           //  createCard(strDrink, strDrinkThumb, idDrink);
                                         }
-                                        //If no results returned display message and load most popular recipes instead
+                                        //If no results returned display message and load most popular drinks instead
                                     } else if (res.drinks.length == 0) {
                                         noResultsCard('https://media.giphy.com/media/TydZAW0DVCbGE/giphy-facebook_s.jpg');
                                         searchApi(",");

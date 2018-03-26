@@ -50,11 +50,11 @@ p3{
 }
 .socials{
   position: fixed;
-  height: 80px;
+  height: 30px;
   bottom: 0px;
   left:0px;
   right:0px;
-  margin-bottom: 30px;
+  margin-bottom:0px;
    text-align: center;
    color: #ffffff;
    width: 100%;

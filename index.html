@@ -59,35 +59,7 @@
       </div>
     </nav>
   </header>
-
-<<<<<<< HEAD
-  <section class="firstRow">
-  <!---left section-->
-  <nav id="leftsection">
-    <section id="Addings">
-      <p class="search" id="Whatingredientshaveyougot?">What ingredients have you got?</p>
-      <section id="wrapper"></section>
-      <section class="add-clrButton">
-        <button class="button searchbutton" id="schbutton" type="button">SEARCH</button>
-        <button class="button clearbutton" id="clrbutton"type="button">CLEAR</button>
-      </section>
-
-      <script>
-      //Add ingredient box on page load
-      addIngredientBox();
-      //Add additional ingredient box on click
-      $('#Addings').on('click','.add-box',function(){
-        $('.form-wrapper').removeClass("add").addClass("remove");
-        $('.add-box').removeClass("add-box").addClass("remove-box").text("-");
-        addIngredientBox();
-
-      });
-
-      //Remove selected ingredient boxes on click
-      $('#Addings').on('click','.remove-box',function(){
-        $(this).parents('form').remove();
-      });
-=======
+  
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
@@ -117,7 +89,7 @@
               $('#Addings').on('click','.remove-box',function(){
                 $(this).parents('form').remove();
               });
->>>>>>> 02cf6c19ff4381dc6f01baf615e8abb895b7c930
+
 
       //To add ingredient boxes
       function addIngredientBox(){

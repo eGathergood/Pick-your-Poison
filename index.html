@@ -20,6 +20,7 @@
    </title>
 </head>
 <body class="bg">
+
   <script src="main.js"> </script>
   <header id="MainHeader">
 
@@ -32,15 +33,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
-          </li>
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+        <li>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Action</a>
               <a class="dropdown-item" href="#">Another action</a>
@@ -58,6 +60,7 @@
     </nav>
   </header>
 
+<<<<<<< HEAD
   <section class="firstRow">
   <!---left section-->
   <nav id="leftsection">
@@ -84,6 +87,37 @@
       $('#Addings').on('click','.remove-box',function(){
         $(this).parents('form').remove();
       });
+=======
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <section class="firstRow">
+          <!---left section-->
+          <nav id="leftsection">
+            <section id="Addings">
+              <p class="search" id="Whatingredientshaveyougot?">What ingredients have you got?</p>
+              <section id="wrapper"></section>
+              <section class="add-clrButton">
+                <button class="button searchbutton" id="schbutton" type="button">SEARCH</button>
+                <button class="button clearbutton" id="clrbutton"type="button">CLEAR</button>
+              </section>
+
+              <script>
+              //Add ingredient box on page load
+              addIngredientBox();
+              //Add additional ingredient box on click
+              $('#Addings').on('click','.add-box',function(){
+                $('.form-wrapper').removeClass("add").addClass("remove");
+                $('.add-box').removeClass("add-box").addClass("remove-box").text("-");
+                addIngredientBox();
+
+              });
+
+              //Remove selected ingredient boxes on click
+              $('#Addings').on('click','.remove-box',function(){
+                $(this).parents('form').remove();
+              });
+>>>>>>> 02cf6c19ff4381dc6f01baf615e8abb895b7c930
 
       //To add ingredient boxes
       function addIngredientBox(){
@@ -118,6 +152,18 @@
           $('#wrapper').empty();
           addIngredientBox();
         });
+      });
+        </script>
+        </div>
+        <div class="col-sm-8" id="placeholderDiv">
+
+        <h2>Sangria</h2>
+        <img src="Sangria_google.jpg"alt="cocktail"  height="502" width="753">
+        <h2>Martini</h2>
+        <img src="Martini_google.jpg"alt="cocktail" height="502" width="753">
+        <h2>Mojito</h2>
+        <img src="Mojito_pexles.jpg"alt="cocktail" height="502" width="753">
+        <script>
         function searchApi(search) {
 
                             //Create Loading Spinner
@@ -156,7 +202,7 @@
                                 success: function (response) {
                                     console.log(response);
                                     var res = JSON.parse(JSON.stringify(response));
-                                    //If results are found create and populate card for each recipe
+                                    //If results are found create and populate card for each drink
                                     if (res.drinks.length > 0) {
                                         for (var i = 0; i < res.drinks.length; i++) {
                                             var strDrink = res.drinks[i].strDrink;
@@ -165,7 +211,7 @@
                                             console.log(strDrink);
                                           //  createCard(strDrink, strDrinkThumb, idDrink);
                                         }
-                                        //If no results returned display message and load most popular recipes instead
+                                        //If no results returned display message and load most popular drinks instead
                                     } else if (res.drinks.length == 0) {
                                         noResultsCard('https://media.giphy.com/media/TydZAW0DVCbGE/giphy-facebook_s.jpg');
                                         searchApi(",");
@@ -188,11 +234,15 @@
     </section>
       </nav>
 
-      <div class="bg" id="ResultArea"></div>
+
     </section>
-
+  </div>
+</div>
+</div>
+<!--<div class="bg" id="ResultArea">
+  <h2>mine</h2
+</div>
     <!--footer-->
-
     <footer>
       <div id="footer-info">
         info@pickyourposion.com<br>

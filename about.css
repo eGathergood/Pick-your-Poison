@@ -14,23 +14,19 @@ body, html {
   text-align: center;
 }
 
-#cocktailimg{
-  height:75%;
-  text-align: centre;
+p3{
+//  height:20%;
+  color: white;
+  font-size:20px;
 
-}
-
-#cocktailimg2{
-  height:30%;
-  text-align: left;
 }
 
 #StuffAboutTheWebsite{
-  text-align:center;
-  height:50%;
+  //text-align:center;
+  //height:50%;
   color:white;
-  padding-left: 200px;
-  padding-right: 200px
+  //padding-left: 200px;
+  //padding-right: 200px
 }
 
 /*footer*/

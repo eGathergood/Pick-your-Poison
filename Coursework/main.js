@@ -5,6 +5,6 @@ $('#drinkSearch').click(function(){
     $.getJSON("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita", function(Result) {
     	console.log(Result)
 
-    })
+    });
 
-})
+});

@@ -55,7 +55,11 @@ h2{
   border-radius: 8px;
   line-height: 25px;
   float:left;
+<<<<<<< HEAD
   //padding: 15px;
+=======
+  padding: 15px;
+>>>>>>> 1fd3c3c08a5abb3389926c1187f8caa5af89f221
   //margin-left: 5%;
   background-color: white;
   overflow:auto;

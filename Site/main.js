@@ -5,6 +5,15 @@ $('#drinkSearch').click(function(){
 
     $.getJSON("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+ word, function(Result) {
     	console.log(Result)
+
+      Result.drinks.forEach(function(ingredients){
+
+         var ing1 = ingredients.strIngredient1;
+
+         console.log(ing1);
+
+
+      })
     });
 
 });

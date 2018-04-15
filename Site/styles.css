@@ -2,6 +2,10 @@ body, html {
   //height: 100%;
 }
 
+h2{
+  background-color: white;
+}
+
 .bg {
   background-image: url("HOME_IMAGE_2.jpg");
   height: 100%;
@@ -14,9 +18,13 @@ body, html {
   color:white;
   text-align: center;
 }
-h2{
-  background-color: white;
+
+#resultsbox{
+  margin-top: 5%;
+  margin-left: 10%;
+  color:white;
 }
+
 
 #placeholderDiv{
   //position: fixed;

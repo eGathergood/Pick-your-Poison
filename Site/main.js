@@ -1,19 +1,53 @@
-$('#drinkSearch').click(function(){
-  var word = document.getElementById("sbar").value;
-  event.preventDefault();
-  console.log(word)
+  $('#drinkSearch').click(function(){
+    var word = document.getElementById("sbar").value;
+    event.preventDefault();
+    console.log(word)
 
-    $.getJSON("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+ word, function(Result) {
-    	console.log(Result)
+      $.getJSON("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+ word, function(Result) {
+      	console.log(Result)
 
-      Result.drinks.forEach(function(ingredients){
+        Result.drinks.forEach((drink) => {
+    const drinkEntries = Object.entries(drink),
+      // This part build arrays out of the two sets of keys
+      [
+        ingredientsArray,
+        measuresArray
+      ] = [
+        "strIngredient",
+        "strMeasure"
+      ].map((keyName) => Object.assign([], ...drinkEntries
+          .filter(([key, value]) => key.startsWith(keyName))
+          .map(([key, value]) => ({[parseInt(key.slice(keyName.length))]: value})))),
 
-         var ing1 = ingredients.strIngredient1;
+      // This part filters empty values based on the ingredients
+      {
+        finalIngredients,
+        finalMeasures
+      } = ingredientsArray.reduce((results, value, index) => {
+        if(value && value.trim() || measuresArray[index] && measuresArray[index].trim()){
+          results.finalIngredients.push(value);
+          results.finalMeasures.push(measuresArray[index]);
+        }
 
-         console.log(ing1);
+        return results;
+      }, {
+        finalIngredients: [],
+        finalMeasures: []
+      }),
 
+      // zip both arrays
+      ingredientsWithMeasures = finalIngredients
+        .map((value, index) => [finalMeasures[index], value]);
 
-      })
-    });
+    // Output
+    console.log("Ingredients:", finalIngredients);
+    console.log("Measures:", finalMeasures);
 
-});
+    console.log("All ingredients and measures:\n", ingredientsWithMeasures
+      .map(([measure, ingredient]) => `${(measure || "").trim()} ${(ingredient || "").trim()}`)
+      .join("\n"));
+  });
+
+      });
+
+  });

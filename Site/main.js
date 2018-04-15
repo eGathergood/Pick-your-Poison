@@ -1,14 +1,16 @@
   $('#drinkSearch').click(function(){
     var word = document.getElementById("sbar").value;
+    $( "#mainPage").toggle();
     event.preventDefault();
     console.log(word)
+
 
       $.getJSON("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+ word, function(Result) {
       	console.log(Result)
 
         Result.drinks.forEach((drink) => {
     const drinkEntries = Object.entries(drink),
-      // This part build arrays out of the two sets of keys
+      //Build arrays out of the two sets of keys
       [
         ingredientsArray,
         measuresArray
@@ -19,7 +21,7 @@
           .filter(([key, value]) => key.startsWith(keyName))
           .map(([key, value]) => ({[parseInt(key.slice(keyName.length))]: value})))),
 
-      // This part filters empty values based on the ingredients
+      // Filters empty values based on the ingredients
       {
         finalIngredients,
         finalMeasures

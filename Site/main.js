@@ -1,3 +1,8 @@
+$(document).ready(function(){
+    $("#resultsbox").toggle(false);
+});
+
+
   $('#drinkSearch').click(function(){
     var word = document.getElementById("sbar").value;
     $( "#mainPage").toggle(false);

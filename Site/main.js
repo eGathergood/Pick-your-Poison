@@ -1,6 +1,6 @@
   $('#drinkSearch').click(function(){
     var word = document.getElementById("sbar").value;
-    $( "#mainPage").toggle();
+    $( "#mainPage").toggle(false);
     event.preventDefault();
     console.log(word)
 

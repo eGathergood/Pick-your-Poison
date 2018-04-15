@@ -1,6 +1,8 @@
   $('#drinkSearch').click(function(){
     var word = document.getElementById("sbar").value;
     $( "#mainPage").toggle(false);
+    $( "#resultsbox").toggle(true);
+
     event.preventDefault();
     console.log(word)
 
@@ -44,6 +46,9 @@
     // Output
     console.log("Ingredients:", finalIngredients);
     console.log("Measures:", finalMeasures);
+
+  $('#results').append("<li>" + ingredientsWithMeasures + "</li>");
+
 
     console.log("All ingredients and measures:\n", ingredientsWithMeasures
       .map(([measure, ingredient]) => `${(measure || "").trim()} ${(ingredient || "").trim()}`)

@@ -15,7 +15,12 @@ $(document).ready(function(){
       $.getJSON("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+ word, function(Result) {
       	console.log(Result)
 
+
+
+
         Result.drinks.forEach((drink) => {
+          var drinkName = drink.strDrink;
+          console.log(drinkName);
     const drinkEntries = Object.entries(drink),
       //Build arrays out of the two sets of keys
       [
@@ -52,7 +57,7 @@ $(document).ready(function(){
     console.log("Ingredients:", finalIngredients);
     console.log("Measures:", finalMeasures);
 
-  $('#results').append("<li>" + ingredientsWithMeasures + "</li>");
+    $('#resultsTable > tbody:last').append( "<tr><td>"+ drinkName + "</td> + <td>"+ ingredientsWithMeasures + "</td></tr>" );
 
 
     console.log("All ingredients and measures:\n", ingredientsWithMeasures

@@ -23,7 +23,7 @@ a#active{
 .form{
   position:relative;
   z-index:1;
-  background:rgba(7,40,195,0.8);
+  background:rgba(52,58,64,0.8);
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;

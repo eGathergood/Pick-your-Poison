@@ -49,22 +49,13 @@ p3{
    background-color: #343a40;
 }
 .socials{
-<<<<<<< HEAD
   //text-align: center;
-  position: fixed;
-  height: 80px;
-  bottom: 0px;
-  left:0px;
-  right:0px;
-  margin-bottom: 30px;
-=======
   position: fixed;
   height: 30px;
   bottom: 0px;
   left:0px;
   right:0px;
   margin-bottom:0px;
->>>>>>> 1fd3c3c08a5abb3389926c1187f8caa5af89f221
    text-align: center;
    color: #ffffff;
    width: 100%;

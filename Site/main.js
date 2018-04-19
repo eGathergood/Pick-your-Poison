@@ -1,17 +1,22 @@
+//Search results hidden on page load
 $(document).ready(function(){
     $("#resultsbox").toggle(false);
 });
 
 
+//Code executed when button is clicked
   $('#drinkSearch').click(function(){
+    //Gather searchterms
     var word = document.getElementById("sbar").value;
+    //Show results div, hide default main page
     $( "#mainPage").toggle(false);
     $( "#resultsbox").toggle(true);
 
+    //Stop button from refreshing page (default function)
     event.preventDefault();
     console.log(word)
 
-
+    //Get API response using searchterms
       $.getJSON("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+ word, function(Result) {
       	console.log(Result)
 

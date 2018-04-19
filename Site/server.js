@@ -9,6 +9,7 @@ app.get('/', function(req, res){
  res.sendFile('/home/codio/workspace/Pick-your-Poison/Site/index.html');
 });
 app.listen(8080);
+console.log('listen on 8080');
 
 app.post('/dologin', function(req, res) {
   console.log(JSON.stringify(req.body))

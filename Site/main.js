@@ -3,7 +3,33 @@
 $(document).ready(function(){
     addIngredientBox();
     $("#resultsbox").toggle(false);
+
+    //to return box contents
+    function getSearchBox(){
+      var userInput="";
+      $(".form-wrapper input").each(function(){
+        userInput+=$(this).val()+',';
+      });
+      return userInput;
+    }
+
+    //run the ingredient search
+    $("#schbutton").click(function(){
+      console.log("clicked");
+      $('.results').remove();
+      searchApi(getSearchBox());
+    });
+    // clear all additional ingredient boxes available
+    $("#clrbutton").click(function(){
+      $('#wrapper').empty();
+      addIngredientBox();
+    });
 });
+
+
+
+
+
 
 
 //Add additional ingredient box on click

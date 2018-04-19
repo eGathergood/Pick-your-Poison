@@ -78,32 +78,8 @@
 
 
 
-        
-              <!---for the search button--->
-              <script type="text/javascript">
-              jQuery(document).ready(function($){
-                //to return box contents
-                function getSearchBox(){
-                  var userInput="";
-                  $(".form-wrapper input").each(function(){
-                    userInput+=$(this).val()+',';
-                  });
-                  return userInput;
-                }
 
-                //run the ingredient search
-                $("#schbutton").click(function(){
-                  console.log("clicked");
-                  $('.results').remove();
-                  searchApi(getSearchBox());
-                });
-                // clear all additional ingredient boxes available
-                $("#clrbutton").click(function(){
-                  $('#wrapper').empty();
-                  addIngredientBox();
-                });
-              });
-              </script>
+
             </div>
             <div class="col-md-8" id="placeholderDiv">
 

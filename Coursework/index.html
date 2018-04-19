@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="styles.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+
+
+
+   <title>
+     Pick your Poison
+   </title>
+</head>
+<body class="bg">
+
+  <script src="main.js"> </script>
+  <header id="MainHeader">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Pick your Poison</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+        <li>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button id="drinkSearch"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="row">
+    <div class="col-md-4">
+        <section class="firstRow">
+          <!---left section-->
+          <nav id="leftsection">
+            <section id="Addings">
+              <p class="search" id="Whatingredientshaveyougot?">What ingredients have you got?</p>
+              <section id="wrapper"></section>
+              <section class="add-clrButton">
+                <button class="button searchbutton" id="schbutton" type="button">SEARCH</button>
+                <button class="button clearbutton" id="clrbutton"type="button">CLEAR</button>
+              </section>
+
+              <script>
+              //Add ingredient box on page load
+              addIngredientBox();
+              //Add additional ingredient box on click
+              $('#Addings').on('click','.add-box',function(){
+                $('.form-wrapper').removeClass("add").addClass("remove");
+                $('.add-box').removeClass("add-box").addClass("remove-box").text("-");
+                addIngredientBox();
+
+              });
+
+              //Remove selected ingredient boxes on click
+              $('#Addings').on('click','.remove-box',function(){
+                $(this).parents('form').remove();
+              });
+
+
+      //To add ingredient boxes
+      function addIngredientBox(){
+        var formWrapper= $('<form class="form-wrapper cf add" onsubmit="return false"></form>');
+        var textBox=$('<input class="text-box" type="text"placeholder="List ingredients here..">');
+        var button=$('<button class="add-box">+</button>');
+        $(formWrapper).append(textBox);
+        $(formWrapper).append(button);
+        $(formWrapper).appendTo($('#wrapper'));
+      }
+      </script>
+      <!---for the search button--->
+      <script type="text/javascript">
+    jQuery(document).ready(function($){
+        //to return box contents
+        function getSearchBox(){
+          var userInput="";
+          $(".form-wrapper input").each(function(){
+            userInput+=$(this).val()+',';
+          });
+          return userInput;
+        }
+
+        //run the ingredient search
+        $("#schbutton").click(function(){
+          console.log("clicked");
+          $('.results').remove();
+          searchApi(getSearchBox());
+        });
+        // clear all additional ingredient boxes available
+        $("#clrbutton").click(function(){
+          $('#wrapper').empty();
+          addIngredientBox();
+        });
+      });
+        </script>
+        </div>
+        <div class="col-md-8" id="placeholderDiv">
+
+        <h2>Sangria</h2>
+        <img src="Sangria_google.jpg"alt="cocktail"  height="502" width="753">
+        <h2>Martini</h2>
+        <img src="Martini_google.jpg"alt="cocktail" height="502" width="753">
+        <h2>Mojito</h2>
+        <img src="Mojito_pexles.jpg"alt="cocktail" height="502" width="753">
+        <script>
+        function searchApi(search) {
+
+                            //Create Loading Spinner
+                            var opts = {
+                                lines: 10, // The number of lines to draw
+                                length: 20   , // The length of each line
+                                width: 15, // The line thickness
+                                radius: 10, // The radius of the inner circle
+                                corners: 0, // Corner roundness (0..1)
+                                rotate: 0, // The rotation offset
+                                color: '#ff6138', // #rgb or #rrggbb
+                                speed: 1, // Rounds per second
+                                trail: 60, // Afterglow percentage
+                                shadow: false, // Whether to render a shadow
+                                hwaccel: false, // Whether to use hardware acceleration
+                                className: 'spinner', // The CSS class to assign to the spinner
+                                zIndex: 2e9, // The z-index (defaults to 2000000000)
+                                top: 40, // Top position relative to parent in px
+                                left: 25 // Left position relative to parent in px
+                            };
+                            var target = document.getElementById('ResultArea');
+                          //  var spinner = new Spinner(opts).spin(target);
+                          var searcString = document.getElementById('ResultArea');
+
+                            $.ajax({
+                                url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin",
+                                type: "GET",
+
+                                dataType: "json",
+                                /**
+                                 * @property {string} strDrink
+                                 * @property {string} strDrinkThumb
+                                 * @property {string} idDrink
+
+                                 */
+                                success: function (response) {
+                                    console.log(response);
+                                    var res = JSON.parse(JSON.stringify(response));
+                                    //If results are found create and populate card for each drink
+                                    if (res.drinks.length > 0) {
+                                        for (var i = 0; i < res.drinks.length; i++) {
+                                            var strDrink = res.drinks[i].strDrink;
+                                            var strDrinkThumb = res.drinks[i].strDrinkThumb;
+                                            var idDrink = res.drinks[i].idDrink;
+                                            console.log(strDrink);
+                                          //  createCard(strDrink, strDrinkThumb, idDrink);
+                                        }
+                                        //If no results returned display message and load most popular drinks instead
+                                    } else if (res.drinks.length == 0) {
+                                        noResultsCard('https://media.giphy.com/media/TydZAW0DVCbGE/giphy-facebook_s.jpg');
+                                        searchApi(",");
+                                    }
+
+                                  //  spinner.stop();
+                                }
+                                error: function () {
+                                    alert("error");
+                                }
+                            });
+                          }
+
+                        /*end function*/
+})
+
+      </script>
+    </section>
+      </nav>
+
+
+    </section>
+  </div>
+</div>
+</div>
+<!--<div class="bg" id="ResultArea">
+  <h2>mine</h2
+</div>
+    <!--footer-->
+    <footer>
+      <div id="footer-info">
+        info@pickyourposion.com<br>
+        01345678910<br>
+        Moduel CM2104
+
+           </div>
+
+           <div class="socials">
+                <a class="btn btn-primary btn-facebook" href="#" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                <a class="btn btn-primary btn-twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                 <a class="btn btn-primary btn-google" href="#" target="_blank"><i class="fa fa-google"></i></a>
+                 <a class="btn btn-primary btn-linkedin" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a class="btn btn-primary btn-youtube" href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+
+           </div>
+      </footer>
+  </body>
+
+
+
+
+     </html>

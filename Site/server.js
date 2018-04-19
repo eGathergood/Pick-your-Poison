@@ -6,7 +6,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser'); 
 
 app.get('/', function(req, res){
- res.render('/index.html');
+ res.send('/home/codio/workspace/Pick-your-Poison/Site/index.html');
 });
 app.listen(8080);
 console.log('listen on 8080');

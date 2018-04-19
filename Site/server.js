@@ -1,9 +1,9 @@
-const MongoClient = require('mongodb').MongoClient; //npm install mongodb@2.2.32
+const MongoClient = require('mongodb').MongoClient; 
 const url = "mongodb://localhost:27017/users";
 const express = require('express');
 const app = express();
-const session = require('express-session'); //npm install express-session
-const bodyParser = require('body-parser'); //npm install body-parser
+const session = require('express-session'); 
+const bodyParser = require('body-parser'); 
 
 app.get('/', function(req, res){
  res.sendFile('/home/codio/workspace/Pick-your-Poison/Site/index.html');

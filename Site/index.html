@@ -115,9 +115,10 @@
                 var searcString = document.getElementById('ResultArea');
 
                 $.ajax({
-                  url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin",
+                  url:" https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic",
+                  url:"https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic",
                   type: "GET",
-
+                  data:
                   dataType: "json",
                   /**
                   * @property {string} strDrink

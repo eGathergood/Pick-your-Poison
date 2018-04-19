@@ -17,7 +17,11 @@ var db;
 
 
 app.get('/', function(req, res){
+<<<<<<< HEAD
  res.send('/home/codio/workspace/Pick-your-Poison/Site/index.html');
+=======
+ res.render('/index.html');
+>>>>>>> 1fe0861e14b2b8bac4576dc451ed33a442a5c2b6
 });
 app.listen(8080);
 console.log('listen on 8080');
@@ -60,3 +64,7 @@ var datatostore =
     res.redirect('/')
   })
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1fe0861e14b2b8bac4576dc451ed33a442a5c2b6

@@ -30,7 +30,7 @@ h2{
 
 #placeholderDiv{
   //position: fixed;
-  top: 200px;
+  top: 50px;
   margin-top: 2%;
   width: 25%;
   border-radius: 8px;
@@ -39,7 +39,7 @@ h2{
   //margin-left: 5%;
   background-color: white;
   overflow:auto;
-  max-height: 500px;
+  max-height: 400px;
 // max-width: 600px;
 }
 
@@ -60,7 +60,7 @@ h2{
 
 #leftsection{
   position: fixed;
-  top: 250px;
+  top: 100px;
   margin-top: 2%;
   width: 25%;
   border-radius: 8px;
@@ -140,3 +140,48 @@ body{
   text-decoration: none;
   border: #217f56;
 }
+
+/* Smartphones (portrait and landscape) ---------- */
+ @media screen and (min-width: 320px) and (max-width: 480px){
+   [class*="col-"] {
+     width: 100%;
+   }
+
+ }
+ /* Smartphones (portrait) ---------- */
+ @media screen and (max-width: 320px){
+[class*="col-"] {
+  width: 100%;
+}
+ }
+ /* Smartphones (landscape) ---------- */
+ @media screen and (min-width: 321px){
+   [class*="col-"] {
+     width: 100%;
+   }
+ }
+ /* tablets, iPads (portrait and landscape) ---------- */
+ @media screen and (min-width: 768px) and (max-width: 1024px){
+   .col-md-4 {width: 25%};
+   .col-md-8 {width: 50%};
+ }
+ /* tablets, iPads (portrait) ---------- */
+ @media screen and (min-width: 768px){
+   .col-md-4 {width: 25%};
+   .col-md-8 {width: 50%};
+ }
+ /* tablets, iPads (landscape) ---------- */
+ @media screen and (min-width: 1024px){
+   .col-md-4 {width: 30%};
+   .col-md-8 {width: 60%};
+ }
+ /* Desktops and laptops ---------- */
+ @media screen and (min-width: 1224px){
+.col-md-4 {width: 35%};
+.col-md-8 {width: 65%};
+ }
+ /* Large screens ---------- */
+ @media screen and (min-width: 1824px){
+   .col-md-4 {width: 35%};
+   .col-md-8 {width: 65%};
+ }

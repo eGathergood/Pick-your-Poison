@@ -6,7 +6,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser'); 
 
 app.get('/', function(req, res){
- res.sendFile('/index.html');
+ res.render('/index.html');
 });
 app.listen(8080);
 console.log('listen on 8080');

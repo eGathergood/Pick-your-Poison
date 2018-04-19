@@ -5,6 +5,17 @@ const app = express();
 const session = require('express-session'); 
 const bodyParser = require('body-parser'); 
 
+app.use(session({ secret: 'example' }));
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+var db;
+
+
 app.get('/', function(req, res){
  res.send('/home/codio/workspace/Pick-your-Poison/Site/index.html');
 });

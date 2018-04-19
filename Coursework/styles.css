@@ -50,7 +50,7 @@ h2{
 
 #leftsection{
   position: fixed;
-  top: 250px;
+  top: 100px;
   margin-top: 2%;
   width: 25%;
   border-radius: 8px;
@@ -60,8 +60,7 @@ h2{
   //margin-left: 5%;
   background-color: white;
   overflow:auto;
-  max-height: 450px;
-  max-width: 300px;
+  max-height: 400px;
 }
 body{
   margin-bottom: 90px;

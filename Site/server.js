@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
 app.get('/', function(req, res){
- res.sendFile('~/workspace/Pick-your-Poison/Coursework/index.html');
+ res.sendFile('/home/codio/workspace/Pick-your-Poison/Site/index.html');
 });
 app.listen(8080);

@@ -15,16 +15,30 @@ app.set('view engine', 'ejs');
 
 var db;
 
-
-app.get('/', function(req, res){
-<<<<<<< HEAD
- res.send('/home/codio/workspace/Pick-your-Poison/Site/index.html');
-=======
- res.render('/index.html');
->>>>>>> 1fe0861e14b2b8bac4576dc451ed33a442a5c2b6
+MongoClient.connect(url, function(err, database) {
+  if (err) throw err;
+  db = database;
+  app.listen(8080);
+  console.log('listening on 8080');
 });
+
+//root route
+app.get('/', function(req, res){
+ res.redirect('/index'
+)});
 app.listen(8080);
 console.log('listen on 8080');
+
+//login route
+app.get('/login', function(req, res) {
+  res.render('/login');
+});
+//about route
+app.get('/about', function(req, res) {
+  res.render('/about');
+});
+
+
 
 app.post('/dologin', function(req, res) {
   console.log(JSON.stringify(req.body))
@@ -64,7 +78,3 @@ var datatostore =
     res.redirect('/')
   })
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> 1fe0861e14b2b8bac4576dc451ed33a442a5c2b6

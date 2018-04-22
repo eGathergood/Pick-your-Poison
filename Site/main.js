@@ -1,60 +1,27 @@
 //Search results hidden on page load
 //Add ingredient box on load
 $(document).ready(function(){
-    addIngredientBox();
-    $("#resultsbox").toggle(false);
+   $("#resultsbox").toggle(false);
+    $("#resultsTable").toggle(false);
 
-    //to return box contents
-    function getSearchBox(){
-      var userInput="";
-      $(".form-wrapper input").each(function(){
-        userInput+=$(this).val()+',';
-      });
-      return userInput;
-    }
+    });
+
+
 
     //run the ingredient search
     $("#schbutton").click(function(){
-      console.log("clicked");
-      $('.results').remove();
-      searchApi(getSearchBox());
+
+      var ingInput = document.getElementById("ingredientInput").value;
+      console.log(ingInput);
+
+      $.getJSON("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="+ ingInput, function(ingResult) {
+        console.log(ingResult)
+
+
+      });
+
+
     });
-    // clear all additional ingredient boxes available
-    $("#clrbutton").click(function(){
-      $('#wrapper').empty();
-      addIngredientBox();
-    });
-});
-
-
-
-
-
-
-
-//Add additional ingredient box on click
-$('#Addings').on('click','.add-box',function(){
-  $('.form-wrapper').removeClass("add").addClass("remove");
-  $('.add-box').removeClass("add-box").addClass("remove-box").text("-");
-  addIngredientBox();
-
-});
-
-//Remove selected ingredient boxes on click
-$('#Addings').on('click','.remove-box',function(){
-  $(this).parents('form').remove();
-});
-
-
-//To add ingredient boxes
-function addIngredientBox(){
-  var formWrapper= $('<form class="form-wrapper cf add" onsubmit="return false"></form>');
-  var textBox=$('<input class="text-box" type="text"placeholder="List ingredients here..">');
-  var button=$('<button class="add-box">+</button>');
-  $(formWrapper).append(textBox);
-  $(formWrapper).append(button);
-  $(formWrapper).appendTo($('#wrapper'));
-}
 
 
 //Code executed when button is clicked

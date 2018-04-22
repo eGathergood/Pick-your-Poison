@@ -26,8 +26,6 @@ MongoClient.connect(url, function(err, database) {
 app.get('/', function(req, res){
  res.redirect('/index'
 )});
-app.listen(8080);
-console.log('listen on 8080');
 
 //login route
 app.get('/login', function(req, res) {

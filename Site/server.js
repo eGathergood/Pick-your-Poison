@@ -24,6 +24,7 @@ MongoClient.connect(url, function(err, database) {
 
 //root route
 app.get('/', function(req, res){
+  if (err) throw err;
  res.redirect('/index'
 )});
 

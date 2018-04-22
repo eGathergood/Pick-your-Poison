@@ -44,7 +44,7 @@ app.post('/dologin', function(req, res) {
   var uname = req.body.username;
   var pword = req.body.password;
 
-  db.collection('users').findOne({"login.username":uname}, function(err, result) {
+  db.collection('people').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){res.redirect('/login');return}
@@ -70,7 +70,7 @@ var datatostore = {
 
 
 //once created we just run the data string against the database and all our new data will be saved/
-  db.collection('users').save(datatostore, function(err, result) {
+  db.collection('people').save(datatostore, function(err, result) {
     if (err) throw err;
     console.log('saved to database')
     //when complete redirect to the index

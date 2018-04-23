@@ -23,8 +23,8 @@ MongoClient.connect(url, function(err, database) {
 });
 
 //root route
-app.get('/', function(req, res){
- res.redirect('/')});
+app.get('/index', function(req, res){
+ res.redirect('/index')});
 
 //login route
 app.get('/login', function(req, res) {

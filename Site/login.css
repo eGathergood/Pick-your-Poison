@@ -79,3 +79,7 @@ a#active{
 .form .register-form{
   display: none;
 }
+
+p{
+  color: white;
+}

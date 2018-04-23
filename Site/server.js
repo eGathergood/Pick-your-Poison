@@ -1,9 +1,9 @@
-const MongoClient = require('mongodb').MongoClient; 
+const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/users";
 const express = require('express');
 const app = express();
-const session = require('express-session'); 
-const bodyParser = require('body-parser'); 
+const session = require('express-session');
+const bodyParser = require('body-parser');
 
 app.use(session({ secret: 'example' }));
 
@@ -17,11 +17,7 @@ var db;
 
 
 app.get('/', function(req, res){
-<<<<<<< HEAD
- res.send('/home/codio/workspace/Pick-your-Poison/Site/index.html');
-=======
  res.render('/index.html');
->>>>>>> 1fe0861e14b2b8bac4576dc451ed33a442a5c2b6
 });
 app.listen(8080);
 console.log('listen on 8080');
@@ -49,11 +45,11 @@ app.post('/login', function(req, res) {
 
   //we create the data string from the form components that have been passed in
 
-var datatostore = 
+var datatostore =
 "name":req.body.username,
  "email":req.body.email,
   "password":req.body.password}
- 
+
 
 
 //once created we just run the data string against the database and all our new data will be saved/
@@ -64,7 +60,3 @@ var datatostore =
     res.redirect('/')
   })
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> 1fe0861e14b2b8bac4576dc451ed33a442a5c2b6

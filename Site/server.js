@@ -28,14 +28,14 @@ app.get('/', function(req, res){
  res.render('/index.html');
 =======
  res.redirect('/index'
-)});
+);});
 
 //login route
-app.all('/login', function(req, res) {
+app.get('/login', function(req, res) {
   res.render('/login');
 });
 //about route
-app.all('/about', function(req, res) {
+app.get('/about', function(req, res) {
   res.render('/about');
 >>>>>>> 7abf6bbb7235a7a410ee5fc686f27b90b55b7e45
 });

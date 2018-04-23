@@ -53,6 +53,9 @@
           <li class="nav-item">
             <a class="nav-link" href="login.html">Login</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.html">Logout</a>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input id="sbar"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -69,26 +72,28 @@
           <!---left section-->
           <nav id="leftsection">
             <section id="Addings">
+              <p class="search" id="Whatingredientshaveyougot?">What ingredients do you have?</p>
               <section id="wrapper"></section>
-              <div class="form-group">
-                <label for="usr">What ingredient do you want in your drink?</label>
-                  <input type="text" class="form-control" id="ingredientInput">
-                  </div>
-
+              <section class="add-clrButton">
                 <button class="button searchbutton" id="schbutton" type="button">SEARCH</button>
+                <button class="button clearbutton" id="clrbutton"type="button">CLEAR</button>
+              </section>
+
+
+
+
+
             </div>
+            <div class="col-md-8 placeholderDiv" id="placeholderDiv">
 
+              <h2 class="placeholder">Sangria</h2>
+              <img class="placeholder" src="Sangria_google.jpg"alt="cocktail"  height="502" width="753">
+              <h2 class="placeholder">Martini</h2>
+              <img class="placeholder" src="Martini_google.jpg"alt="cocktail" height="502" width="753">
+              <h2 class="placeholder">Mojito</h2>
+              <img class="placeholder" src="Mojito_pexles.jpg"alt="cocktail" height="502" width="753">
 
-
-
-            <div class="col-md-8" id="placeholderDiv">
-
-              <h2>Sangria</h2>
-              <img src="Sangria_google.jpg"alt="cocktail"  height="502" width="753">
-              <h2>Martini</h2>
-              <img src="Martini_google.jpg"alt="cocktail" height="502" width="753">
-              <h2>Mojito</h2>
-              <img src="Mojito_pexles.jpg"alt="cocktail" height="502" width="753">
+          
 
           </section>
           </nav>
@@ -107,13 +112,18 @@
             <th> Ingredients </th>
           </tr>
           </thead>
+
           <tbody>
           <tr>
+
           </tr>
           <tfoot>
           <tr>
+
           </tr>
           <tfoot>
+
+
           </table>
           </div>
 

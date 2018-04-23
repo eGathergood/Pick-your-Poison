@@ -93,3 +93,127 @@ $(document).ready(function(){
       });
 
   });
+
+
+  function searchApi(search) {
+
+    //Create Loading Spinner
+    var opts = {
+      lines: 10, // The number of lines to draw
+      length: 20   , // The length of each line
+      width: 15, // The line thickness
+      radius: 10, // The radius of the inner circle
+      corners: 0, // Corner roundness (0..1)
+      rotate: 0, // The rotation offset
+      color: '#ff6138', // #rgb or #rrggbb
+      speed: 1, // Rounds per second
+      trail: 60, // Afterglow percentage
+      shadow: false, // Whether to render a shadow
+      hwaccel: false, // Whether to use hardware acceleration
+      className: 'spinner', // The CSS class to assign to the spinner
+      zIndex: 2e9, // The z-index (defaults to 2000000000)
+      top: 40, // Top position relative to parent in px
+      left: 25 // Left position relative to parent in px
+    };
+    var target = document.getElementById('placeholderDiv');
+    var spinner = new Spinner(opts).spin(target);
+
+    //clear the placeholder items before populating the results
+    $('.placeholder').remove();
+
+    //Use the split function to separate the ingredients
+    //and apply each ingredient in case of multiple ingredient search
+    var searchterms = search.split(",");
+    for (var j= 0; j < searchterms.length -1; j++){
+      //alert("Item from search: " + searchterms[j]);
+    $.ajax({
+      url:"https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="+searchterms[j],
+      type: "GET",
+      data:{key: "1", q: search.slice(0, -1)},
+      dataType: "json",
+      /**
+      * @property {string} strDrink
+      * @property {string} strDrinkThumb
+      * @property {string} idDrink
+
+      */
+      success: function (response) {
+        console.log(response);
+        var res = JSON.parse(JSON.stringify(response));
+
+        //If results are found create and populate card for each drink
+        if (res.drinks.length > 0) {
+          for (var i = 0; i < res.drinks.length; i++) {
+            var strDrink = res.drinks[i].strDrink;
+            var strDrinkThumb = res.drinks[i].strDrinkThumb;
+            var idDrink = res.drinks[i].idDrink;
+            //alert("Drink= "+idDrink + " image is " + strDrinkThumb);
+            console.log(strDrink);
+            createCard(strDrink, strDrinkThumb, idDrink);
+          }
+          //If no results returned display message and load most popular drinks instead
+        } else if (res.drinks.length == 0) {
+          noResultsCard('https://media.giphy.com/media/TydZAW0DVCbGE/giphy-facebook_s.jpg');
+          searchApi(",");
+        }
+
+        spinner.stop();
+      },
+      error: function () {
+      alert("error: ");
+      //
+    }
+  });
+
+} //closing the for loop for searchterms
+}
+
+/*end function*/
+
+
+//Function that will display a no results found card
+function noResultsCard() {
+    var resultCard = $('<div class="results"></div>');
+    var descWrapper = $('<div class="descWrapper"></div>');
+    var description = $('<div class="desc"></div>').text("No drinks/cocktail found");
+
+    $(resultCard).append(descWrapper);
+    $(descWrapper).append(description);
+    $(resultCard).insertBefore($('.placeholderDiv'));
+}
+//Function that will create and populate a recipe card
+function createCard(desc, imgSrc, recId) {
+    var resultCard = $('<div class="results"></div>');
+    var descWrapper = $('<div class="descWrapper"></div>');
+    var description = $('<div class="desc"></div>').text(desc).attr('href', imgSrc);
+    var imgWrapper = $('<div class="imgWrapper flip"></div>');
+    var image = $('<img class="scale flip"/>').attr('alt', desc).attr('src', imgSrc);
+    var resultInformation = $('<div class="resultInformation"></div>');
+    var soRank = $('<div class="soRank"></div>').text("#" + recId);
+    var resultIngs = $('<div class="resultIngs"></div>');
+
+    //append the result card
+    $(resultCard).append(descWrapper);
+    $(descWrapper).append(description);
+
+    //Make a wrapper for the image
+    $(descWrapper).append(imgWrapper);
+
+    //create the link to the recipe
+    $(imgWrapper).append(image);
+     $(image).wrap($('<a>',{
+         href: "https://www.thecocktaildb.com/drink.php?c=" + recId,
+         target: '_blank'
+     }));
+
+     //Attach a tool tip to the result information for each drink/cocktail
+    $(descWrapper).append(resultInformation);
+    $(resultInformation).append(soRank);
+    $(soRank).wrapInner($('<span>', {
+        title: "Drink/Cocktail ID"
+    }));
+
+    //Add the results to the placeholder area
+    $(resultInformation).append(resultIngs);
+    $(resultCard).appendTo($('.placeholderDiv'));
+}

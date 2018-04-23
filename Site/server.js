@@ -24,11 +24,8 @@ MongoClient.connect(url, function(err, database) {
 
 //root route
 app.get('/', function(req, res){
-<<<<<<< HEAD
  res.render('/index.html');
-=======
- res.redirect('/index'
-);});
+});
 
 //login route
 app.get('/login', function(req, res) {
@@ -37,10 +34,6 @@ app.get('/login', function(req, res) {
 //about route
 app.get('/about', function(req, res) {
   res.render('/about');
->>>>>>> 7abf6bbb7235a7a410ee5fc686f27b90b55b7e45
-});
-
-
 
 app.post('/dologin', function(req, res) {
   console.log(JSON.stringify(req.body))
@@ -65,21 +58,19 @@ app.post('/login', function(req, res) {
 
   //we create the data string from the form components that have been passed in
 
-<<<<<<< HEAD
+
 var datatostore =
 "name":req.body.username,
  "email":req.body.email,
   "password":req.body.password}
 
-=======
+
 var datatostore = {
 "name":req.body.username,
  "email":req.body.email,
   "password":req.body.password,
     "drink":req.body.drink}
  
->>>>>>> 7abf6bbb7235a7a410ee5fc686f27b90b55b7e45
-
 
 //once created we just run the data string against the database and all our new data will be saved/
   db.collection('people').save(datatostore, function(err, result) {
